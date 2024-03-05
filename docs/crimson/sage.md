@@ -4,14 +4,11 @@ sidebar_position: 2
 
 # AI
 
-## bots
-
-- `sst` terminal
-- `ssp` python
-- `ssj` javascript
-- `ssx` mods
-
-## admin
-
-- `ssd` cd documents
-- `ssd` cd binary
+| Command | Description             |
+| ------- | ----------------------- |
+| `sst`   | Terminal help           |
+| `ssp`   | Python help             |
+| `ssj`   | JavaScript help         |
+| `ssx`   | General help            |
+| `ssd`   | View archived documents |
+| `ssb`   | Source code             |

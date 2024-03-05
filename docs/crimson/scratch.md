@@ -21,19 +21,6 @@ sidebar_position: 4
 - ss # get code help at the terminal
 - mods # just chat with a LLM
 
-## bash
-
-```bash
-- var=("red" "blue" "green")    # an array
-- var=$(ls)                     # launch a subshell and return the results
-- var="$(ls)"                   # NOT NEEDED. Output of command substitution will ALWAYS be treated as a single string.
-- echo "$var"                   # use double quotes around, dereference a variable
-- echo "${var:1}world"          # use double quotes around - better for string concatenation and string manipulation
-- fn() {...}                    # define a function
-- fn() (...)                    # function will run in a subshell
-- set -x                        # put at the top of every bash script, excellent for debugging
-```
-
 ## video
 
 - mpv [filename] # play a file
