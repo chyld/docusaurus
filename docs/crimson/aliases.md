@@ -6,16 +6,17 @@ sidebar_position: 5
 
 ## General
 
-| Command | Description                  |
-| ------- | ---------------------------- |
-| `td`    | Temporary directory (create) |
-| `ccc`   | Copy (wl-copy)               |
-| `sd`    | Sync dotfiles to GitHub      |
-| `path`  | Pretty $PATH                 |
-| `fonts` | Installed font list          |
-| `jl`    | Jupyter Lab                  |
-| `ez`    | Edit .zshrc                  |
-| `note`  | Edit scratch.md file         |
+| Command  | Description                          |
+| -------- | ------------------------------------ |
+| `deploy` | Deploy Docusaurus and push to GitHub |
+| `td`     | Temporary directory (create)         |
+| `ccc`    | Copy (wl-copy)                       |
+| `sd`     | Sync dotfiles to GitHub              |
+| `path`   | Pretty $PATH                         |
+| `fonts`  | Installed font list                  |
+| `jl`     | Jupyter Lab                          |
+| `ez`     | Edit .zshrc                          |
+| `note`   | Edit scratch.md file                 |
 
 ## Change Directory
 
