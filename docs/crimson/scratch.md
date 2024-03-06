@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Scratch Pad
@@ -21,13 +21,3 @@ sidebar_position: 5
 - `ffmpeg -i input.webm -c:v libx264 -c:a aac output.mp4`
 - `convert hello.png goodbye.jpg` # image format conversion
 ```
-
-Links
-
-- td: create temp dir
-- ccc: wl-copy
-- sd: sync dot files
-- path: pretty path
-- fonts: list fonts
-- jl: jupyper lab
-- ez: edit zshrc
