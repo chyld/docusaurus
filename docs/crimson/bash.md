@@ -136,7 +136,7 @@ cat <(pwd) <(ls)            # cat temp1.txt temp2.txt
 cat file.txt 1> >(grep x)   # cat_1    => grep_0
 cat file.txt 2> >(grep y)   # cat_2    => grep_0
 # example 1
-cat file.txt | python main.py < file.txt <(ls) <(pwd) <(ps) 1> out.txt 2> err.txt
+cat file.txt | python main.py <(ls) <(pwd) <(ps) 1> out.txt 2> err.txt
 stdin: goodnight moon
 args : ['main.py', '/proc/self/fd/12', '/proc/self/fd/13', '/proc/self/fd/14']
 # example 2
