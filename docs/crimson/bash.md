@@ -123,14 +123,24 @@ var=(1 2 3)
 ## Redirects
 
 ```bash
-echo "hello world" | cmd        # cmd stdin == "hello world"
-cmd < hello.txt                 # cmd stdin == (contents of hello.txt)
-cmd <(ls) <(pwd)                # cmd stdin == empty, rewritten: cmd file1.txt file2.txt
-echo "hello" 1> out.txt         # overwrite stdout
-echo "world" 1>> out.txt        # append to stdout
-echo "world" 2> err.txt         # stderr
-echo "junk" 1> /dev/null 2>&1   # stderr (2) is sent to same location as stdout (1)
-cat <(ls) 1> out.txt 2> err.txt # full example
+# stdin
+cat file.txt | cmd          # cat_1    => cmd_0
+cmd < file.txt              # file.txt => cmd_0
+# stdout and stderr
+cmd 1> out.txt              # cmd_1    => out.txt
+cmd 2> err.txt              # cmd_2    => err.txt
+cmd 1> out.txt 2> err.txt   # cmd_1    => out.txt AND cmd_2 => err.txt
+# process substitution -- the os creates a temp file that contains the output of the command
+cat <(ls)                   # cat temp1.txt
+cat <(pwd) <(ls)            # cat temp1.txt temp2.txt
+cat file.txt 1> >(grep x)   # cat_1    => grep_0
+cat file.txt 2> >(grep y)   # cat_2    => grep_0
+# example 1
+cat file.txt | python main.py < file.txt <(ls) <(pwd) <(ps) 1> out.txt 2> err.txt
+stdin: goodnight moon
+args : ['main.py', '/proc/self/fd/12', '/proc/self/fd/13', '/proc/self/fd/14']
+# example 2
+cat <(ls) <(pwd) 1> >(grep a) 2> >(grep b)
 ```
 
 - if you have a program, like cat, that needs a file, use `<(cmd)` and it will package the results as a file
