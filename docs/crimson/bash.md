@@ -123,12 +123,13 @@ var=(1 2 3)
 ## Redirects
 
 ```bash
-cmd < file.txt                  # send file.txt as stdin
-echo "hello" 1> out.txt         # stdout
+echo "hello world" | cmd        # cmd stdin == "hello world"
+cmd < hello.txt                 # cmd stdin == (contents of hello.txt)
+cmd <(ls) <(pwd)                # cmd stdin == empty, rewritten: cmd file1.txt file2.txt
+echo "hello" 1> out.txt         # overwrite stdout
 echo "world" 1>> out.txt        # append to stdout
 echo "world" 2> err.txt         # stderr
 echo "junk" 1> /dev/null 2>&1   # stderr (2) is sent to same location as stdout (1)
-diff <(ls /docs) <(ls /bak)     # packages 2 stdouts into files used as input into diff
 cat <(ls) 1> out.txt 2> err.txt # full example
 ```
 
